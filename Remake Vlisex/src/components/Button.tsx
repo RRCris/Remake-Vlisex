@@ -1,10 +1,15 @@
 import React from "react";
 import Typografy from "./Typografy";
+import { styled } from "styled-components";
 
 export default function Button() {
   return (
-    <div>
+    <ButtonStyle>
       <Typografy />
-    </div>
+    </ButtonStyle>
   );
 }
+
+const ButtonStyle = styled.div`
+  background-color: red;
+`;

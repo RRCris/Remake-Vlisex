@@ -1,5 +1,5 @@
 import Typografy from "./components/Typografy";
-import Button from "./components/button";
+import Button from "./components/Button";
 
 function App() {
   return (
