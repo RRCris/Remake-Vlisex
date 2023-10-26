@@ -3,7 +3,7 @@ import Button from "./components/Button";
 
 function App() {
   return (
-    <div>
+    <div style={{ fontFamily: "'Manrope',sans-serif" }}>
       <h1>Hola mundo</h1>
       <Button />
       <Typografy />
