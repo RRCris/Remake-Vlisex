@@ -16,6 +16,7 @@ function App() {
       style={{
         fontFamily: "'Manrope',sans-serif",
         background: theme === "dark" ? "#555" : "#ddd",
+        fontWeight: 400,
       }}
     >
       {focus && <h1>Hola mundo</h1>}
