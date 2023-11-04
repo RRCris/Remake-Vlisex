@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 export const BreakpointsData = {
-  xs: 300,
   sm: 640,
   md: 768,
   lg: 1024,

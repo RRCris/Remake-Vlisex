@@ -3,21 +3,21 @@ import Button from "./components/Button";
 import { useFocusWindow } from "./hooks/useFocusWindow";
 import { useOnline } from "./hooks/useOnline";
 import { useResponsive } from "./hooks/useResponsive";
-import { useSchemePrefers } from "./hooks/useColorScheme";
-import { generateArray } from "./utilities/generateArray";
-import Image from "./components/Image";
+
+import { useTheme } from "@/providers/ProviderTheme";
 
 function App() {
   const focus = useFocusWindow();
   const online = useOnline();
   const width = useResponsive();
-  const theme = useSchemePrefers();
-  console.log(theme);
+
+  const { colors, actions } = useTheme();
+  console.log(colors);
   return (
     <div
       style={{
-        fontFamily: "'Manrope',sans-serif",
-        background: theme === "dark" ? "#555" : "#ddd",
+        background: colors.secondary.main,
+        color: colors.secondary.contrast,
       }}
     >
       {focus && <h1>Hola mundo</h1>}
@@ -30,14 +30,13 @@ function App() {
       <Typografy />
 
       <h3>tu pantalla es de tamaño {width}</h3>
-      {generateArray(15).map((i) => (
-        <Image
-          src={`https://picsum.photos/id/${i}/500`}
-          alt={`Image Alt-${i}`}
-          width={700}
-          height={500}
-        />
-      ))}
+      <button onClick={() => actions.setColor("grenDark")}>Green</button>
+      <button onClick={() => actions.setColor("blueDark")}>Blue</button>
+      <button onClick={() => actions.setColor("orangeDark")}>Orange</button>
+      <br />
+      <button onClick={() => actions.setPreferUser("auto")}>mode Auto</button>
+      <button onClick={() => actions.setPreferUser("dark")}>mode Dark</button>
+      <button onClick={() => actions.setPreferUser("light")}>mode Light</button>
     </div>
   );
 }
