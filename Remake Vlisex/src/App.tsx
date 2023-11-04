@@ -1,18 +1,16 @@
 import Typografy from "./components/Typografy";
 import Button from "./components/Button";
-import { useFocusWindow } from "./hooks/useFocusWindow";
 import { useOnline } from "./hooks/useOnline";
 import { useResponsive } from "./hooks/useResponsive";
 
 import { useTheme } from "@/providers/ProviderTheme";
 
 function App() {
-  const focus = useFocusWindow();
   const online = useOnline();
   const width = useResponsive();
 
-  const { colors, actions } = useTheme();
-  console.log(colors);
+  const { colors, actions, avalibleValues, currentValues } = useTheme();
+
   return (
     <div
       style={{
@@ -20,7 +18,6 @@ function App() {
         color: colors.secondary.contrast,
       }}
     >
-      {focus && <h1>Hola mundo</h1>}
       {online ? (
         <h2 style={{ color: "green" }}>estas online</h2>
       ) : (
@@ -30,13 +27,29 @@ function App() {
       <Typografy />
 
       <h3>tu pantalla es de tamaño {width}</h3>
-      <button onClick={() => actions.setColor("grenDark")}>Green</button>
-      <button onClick={() => actions.setColor("blueDark")}>Blue</button>
-      <button onClick={() => actions.setColor("orangeDark")}>Orange</button>
+      {avalibleValues.selectColor.map((c, key) => (
+        <button
+          key={key}
+          onClick={() => actions.setSelectColor(c)}
+          style={{
+            background: currentValues.selectColor === c ? "#F00" : undefined,
+          }}
+        >
+          {c}
+        </button>
+      ))}
       <br />
-      <button onClick={() => actions.setPreferUser("auto")}>mode Auto</button>
-      <button onClick={() => actions.setPreferUser("dark")}>mode Dark</button>
-      <button onClick={() => actions.setPreferUser("light")}>mode Light</button>
+      {avalibleValues.preferUser.map((p, key) => (
+        <button
+          key={key}
+          onClick={() => actions.setPreferUser(p)}
+          style={{
+            background: currentValues.preferUser === p ? "#F00" : undefined,
+          }}
+        >
+          {p}
+        </button>
+      ))}
     </div>
   );
 }
