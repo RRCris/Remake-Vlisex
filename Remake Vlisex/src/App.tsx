@@ -1,13 +1,20 @@
-import Typografy from "./components/Typografy";
-import Button from "./components/Button";
+import Typografy from "@/components/Typografy";
+import Button from "@/components/Button";
 import { useOnline } from "./hooks/useOnline";
-import { useResponsive } from "./hooks/useResponsive";
+import { useResponsive } from "@/hooks/useResponsive";
 
 import { useTheme } from "@/providers/ProviderTheme";
+import { useIntersection } from "@/hooks/useIntersection";
 
+///NOTES: useObservable, useResponse(), placeHolderImage - deacuerdo a scheme, Golobal Styles, Shadows, Enrutado, testing, CI/CD
 function App() {
   const online = useOnline();
   const width = useResponsive();
+  const callback = (e: number) => console.log("hey");
+  const { refObservable, intersectionRatio, match } = useIntersection(
+    callback,
+    80
+  );
 
   const { colors, actions, avalibleValues, currentValues } = useTheme();
 
@@ -16,6 +23,7 @@ function App() {
       style={{
         background: colors.secondary.main,
         color: colors.secondary.contrast,
+        height: 3000,
       }}
     >
       {online ? (
@@ -50,6 +58,12 @@ function App() {
           {p}
         </button>
       ))}
+      <div
+        ref={refObservable}
+        style={{ height: 300, width: 300, background: match ? "green" : "red" }}
+      >
+        {intersectionRatio}
+      </div>
     </div>
   );
 }
