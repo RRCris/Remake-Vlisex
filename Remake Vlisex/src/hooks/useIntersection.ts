@@ -4,7 +4,7 @@ export function useIntersection(
   cb: (percent: number) => void,
   percent: number
 ) {
-  const refObservable = useRef<Element>();
+  const refObservable = useRef<HTMLDivElement>(null);
   const [intersectionRatio, setIntersectionRatio] = useState(0);
   const [match, setMatch] = useState(false);
 
@@ -19,7 +19,6 @@ export function useIntersection(
       setIntersectionRatio(n);
 
       if (n >= percent && !match) {
-        console.log(match);
         setMatch(true);
         cb(n);
       }

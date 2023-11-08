@@ -1,16 +1,16 @@
 import Typografy from "@/components/Typografy";
 import Button from "@/components/Button";
 import { useOnline } from "./hooks/useOnline";
-import { useResponsive } from "@/hooks/useResponsive";
+import { useResponsive } from "@/responsive/useResponsive";
 
 import { useTheme } from "@/providers/ProviderTheme";
 import { useIntersection } from "@/hooks/useIntersection";
 
-///NOTES: useObservable, useResponse(), placeHolderImage - deacuerdo a scheme, Golobal Styles, Shadows, Enrutado, testing, CI/CD
+///NOTES: Add React Router Dom, useViewTransition() ,useResponse(), placeHolderImage - deacuerdo a scheme, Golobal Styles, Shadows, Enrutado, testing, CI/CD
 function App() {
   const online = useOnline();
   const width = useResponsive();
-  const callback = (e: number) => console.log("hey");
+  const callback = () => {};
   const { refObservable, intersectionRatio, match } = useIntersection(
     callback,
     80

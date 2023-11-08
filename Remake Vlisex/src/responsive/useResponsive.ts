@@ -1,13 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { BreakpointsData } from "@/responsive/models";
 
-export const BreakpointsData = {
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  "2xl": 1536,
-};
 export type BreakPointsKeys = keyof typeof BreakpointsData;
 export function useResponsive() {
   const [width, setWidth] = useState<BreakPointsKeys>(
