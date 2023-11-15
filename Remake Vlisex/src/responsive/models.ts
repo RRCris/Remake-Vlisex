@@ -6,8 +6,8 @@ export const BreakpointsData = {
   xxl: 1536,
 };
 
-export const sm = `@media (min-width : ${BreakpointsData.sm}px)`;
-export const md = `@media (min-width : ${BreakpointsData.md}px)`;
-export const lg = `@media (min-width : ${BreakpointsData.lg}px)`;
-export const xl = `@media (min-width : ${BreakpointsData.xl}px)`;
-export const xxl = `@media (min-width : ${BreakpointsData.xxl}px)`;
+export const sm = `@media only screen and (min-width : ${BreakpointsData.sm}px)`;
+export const md = `@media only screen and (min-width : ${BreakpointsData.md}px)`;
+export const lg = `@media only screen and (min-width : ${BreakpointsData.lg}px)`;
+export const xl = `@media only screen and (min-width : ${BreakpointsData.xl}px)`;
+export const xxl = `@media only screen and (min-width : ${BreakpointsData.xxl}px)`;

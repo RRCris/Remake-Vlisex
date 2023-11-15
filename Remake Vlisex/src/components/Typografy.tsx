@@ -1,3 +1,3 @@
 export default function Typografy() {
-  return <div>Typografy</div>;
+  return <div style={{ fontSize: "2rem" }}>Typografy</div>;
 }

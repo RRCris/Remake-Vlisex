@@ -10,8 +10,12 @@ export function useResponsive() {
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const updateSize = (e: any) =>
+    const updateSize = (e: any) => {
+      // const size = Math.floor(e.target.innerWidth / 100);
+      // document.documentElement.style.fontSize = `${size * 2}px`;
+
       setWidth(asingBreakPoint(e.target.innerWidth));
+    };
 
     //reactividad del estado
     window.addEventListener("resize", updateSize);

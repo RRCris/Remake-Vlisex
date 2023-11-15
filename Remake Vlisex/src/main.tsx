@@ -4,20 +4,15 @@ import App from "./App.tsx";
 import ProviderTheme from "./providers/ProviderTheme.tsx";
 
 import "./fonts/declareFont.css";
-import styled from "styled-components";
+import "@/main.scss";
 
-const GlobalStyled = styled.div`
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "'Manrope',sans-serif";
-`;
+import { GlobalStyled } from "@/themes/defaultTheme.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ProviderTheme>
-      <GlobalStyled>
-        <App />
-      </GlobalStyled>
+      <GlobalStyled />
+      <App />
     </ProviderTheme>
   </React.StrictMode>
 );
