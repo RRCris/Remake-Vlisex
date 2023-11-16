@@ -18,6 +18,7 @@ interface TContextTheme {
     secondary: TColorTheme;
   };
   currentValues: {
+    scheme: "dark" | "light";
     selectColor: TSelectColor;
     preferUser: TPreferUser;
     preferSystem: "dark" | "light";

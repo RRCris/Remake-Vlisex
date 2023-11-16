@@ -1,5 +1,3 @@
-import Image from "@/components/Image";
-import React from "react";
 import styled from "styled-components";
 
 export default function AuthPage() {

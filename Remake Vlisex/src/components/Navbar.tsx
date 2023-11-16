@@ -1,7 +1,6 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { flushSync } from "react-dom";
+
 import { viewTrasition } from "@/utilities/viewTransition";
 export default function Navbar() {
   const navigator = useNavigate();

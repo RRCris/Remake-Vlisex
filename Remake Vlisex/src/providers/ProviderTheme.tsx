@@ -10,6 +10,7 @@ const contextTheme = React.createContext<TContextTheme>({
     secondary: palette.gray,
   },
   currentValues: {
+    scheme: "light",
     selectColor: "blueDark",
     preferUser: "light",
     preferSystem: "light",
@@ -50,6 +51,7 @@ export default function ProviderTheme({ children }: { children: ReactNode }) {
       secondary: scheme === "light" ? gray : color,
     },
     currentValues: {
+      scheme,
       selectColor: selectColor,
       preferUser: preferUser,
       preferSystem: preferSystem,

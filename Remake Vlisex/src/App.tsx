@@ -2,7 +2,7 @@ import { useTheme } from "@/providers/ProviderTheme";
 import { useIntersection } from "@/hooks/useIntersection";
 import Image from "./components/Image";
 
-///NOTES: Add React Router Dom, useViewTransition() ,useResponse(), placeHolderImage - deacuerdo a scheme, Golobal Styles, Shadows, Enrutado, testing, CI/CD
+///NOTES:  Shadows, Enrutado, testing, CI/CD
 export function App() {
   const callback = () => {};
   const { refObservable, intersectionRatio, match, firstMatch } =
