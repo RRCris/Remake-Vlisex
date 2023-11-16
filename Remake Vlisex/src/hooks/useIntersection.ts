@@ -7,6 +7,12 @@ export function useIntersection(
   const refObservable = useRef<HTMLDivElement>(null);
   const [intersectionRatio, setIntersectionRatio] = useState(0);
   const [match, setMatch] = useState(false);
+  const [firstMatch, setFirstMatch] = useState(false);
+
+  useEffect(() => {
+    console.log(match);
+    if (match) setFirstMatch(true);
+  }, [match]);
 
   useEffect(() => {
     const options: IntersectionObserverInit = {
@@ -34,5 +40,6 @@ export function useIntersection(
     refObservable,
     intersectionRatio,
     match,
+    firstMatch,
   };
 }

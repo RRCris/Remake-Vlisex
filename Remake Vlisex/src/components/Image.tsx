@@ -12,6 +12,7 @@ interface PropsImage {
 export default function Image(props: PropsImage) {
   return (
     <LazyLoadImage
+      style={{ objectFit: "cover" }}
       src={props.src}
       alt={props.alt}
       width={props.width}
